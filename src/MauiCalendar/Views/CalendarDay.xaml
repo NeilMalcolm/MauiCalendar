@@ -1,0 +1,21 @@
+<ContentView xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MauiCalendar.Views.CalendarDay"
+             xmlns:m="clr-namespace:CalendarLib;assembly=CalendarLib"
+             xmlns:s="clr-namespace:MauiCalendar"
+             xmlns:v="clr-namespace:MauiCalendar.Views"
+             x:DataType="m:CalendarDate"
+             x:Name="This">
+    <ContentView.GestureRecognizers>
+        <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped"
+                              />
+    </ContentView.GestureRecognizers>
+    <ContentView.Content>
+        <StackLayout>
+            <Label x:Name="DayLabel"
+                   HorizontalOptions="Center"/>
+
+            <Label x:Name="ItemsTodayLabel"/>
+        </StackLayout>
+    </ContentView.Content>
+</ContentView>

@@ -1,0 +1,43 @@
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MauiCalendar.MainPage"
+             BackgroundColor="{DynamicResource SecondaryColor}"
+             xmlns:v="clr-namespace:MauiCalendar.Views">
+
+    <Grid x:Name="MainGrid">
+        <StackLayout x:Name="CalendarStack" 
+                     Orientation="Vertical">
+            
+            <StackLayout Orientation="Horizontal">
+                <Button Text="MAR"
+                Command="{Binding PrevMonthCommand}"/>
+                <Button Text="APR"
+                    Command="{Binding CurrMonthCommand}"/>
+                <Button Text="MAY"
+                    Command="{Binding NextMonthCommand}"/>
+            </StackLayout>
+            <v:Calendar SelectedDate="{Binding State.SelectedDate}"
+                    DisplayDate="{Binding State.DisplayDate}"
+                    OnDateSelectedCommand="{Binding OnDateSelectedCommand}"
+                    ItemsSource="{Binding AllItems}"/>
+            
+        </StackLayout>
+        <StackLayout x:Name="DetailsStack" 
+                     Orientation="Vertical">
+            
+            <Label Text="{Binding SelectedDayText}"
+                   FontSize="Medium"
+                   FontAttributes="Bold"
+                   Margin="10, 15"/>
+            <CollectionView ItemsSource="{Binding ItemsForSelectedDay}">
+                <CollectionView.ItemTemplate>
+                    <DataTemplate>
+                        <Label Text="{Binding Text}"
+                               Margin="10"/>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
+            
+        </StackLayout>
+    </Grid>
+</ContentPage>
