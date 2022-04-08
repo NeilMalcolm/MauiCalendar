@@ -48,7 +48,7 @@ public partial class CalendarDay : ContentView
     public void UpdateItems(IEvent[] events)
     {
         this.ItemsTodayLabel.Text = (events?.Length > 0 ? events.Length.ToString() : string.Empty);
-        ItemsTodayLabel.TextColor = Colors.Red;
+        ItemsTodayLabel.TextColor = Colors.Gray;
     }
 
     public void Update(CalendarDate calendarDate)
@@ -69,12 +69,14 @@ public partial class CalendarDay : ContentView
 
     internal void Selected()
     {
-        BackgroundColor = Colors.Yellow;
+        BackgroundColor = Color.FromHex("ad9fe3");
+        ItemsTodayLabel.TextColor = Colors.White;
     }
 
     internal void Deselected()
     {
-        BackgroundColor = Colors.Transparent; 
+        BackgroundColor = Colors.Transparent;
+        ItemsTodayLabel.TextColor = Colors.Gray;
     }
 
     private void TapGestureRecognizer_Tapped(object sender, EventArgs e)

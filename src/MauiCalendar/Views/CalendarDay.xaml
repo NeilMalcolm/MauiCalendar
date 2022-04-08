@@ -7,8 +7,7 @@
              x:DataType="m:CalendarDate"
              x:Name="This">
     <ContentView.GestureRecognizers>
-        <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped"
-                              />
+        <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped" />
     </ContentView.GestureRecognizers>
     <ContentView.Content>
         <StackLayout>
